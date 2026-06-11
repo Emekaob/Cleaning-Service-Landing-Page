@@ -7,6 +7,7 @@
 :root {
   --primary-color: rgb(232, 74, 74);
   --secondary-color: rgb(241, 241, 241);
+  --image-overlay-color: rgb(232, 74, 74, 0.5);
 }
 
 html {
@@ -15,7 +16,6 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  /* padding: 2rem; */
 }
 
 a {
@@ -24,11 +24,16 @@ a {
 
 nav {
   padding: 1.2rem 3rem;
-  /* margin-top: -2rem; */
+  width: 100%;
+
   background-color: var(--secondary-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  position: fixed;
+  top: 0;
+  z-index: 5;
 }
 
 .hamburger {
@@ -74,7 +79,7 @@ a.cs {
   color: var(--primary-color);
 }
 
-.call {
+.call-button {
   background-color: var(--primary-color);
   color: var(--secondary-color);
   border: 0;
@@ -85,9 +90,54 @@ a.cs {
   cursor: pointer;
 }
 
+.hero-image {
+  background-image: url("images/vitaly-gariev-2RpE13rIbAM-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 110vh;
+  width: 100%;
+  margin-top: 82px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  padding-top: 12rem;
+}
+
+.hero-content h1 {
+  font-size: 5rem;
+  color: var(--secondary-color);
+}
+
+.hero-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 110vh;
+  margin-top: 82px;
+  background-color: var(--image-overlay-color);
+  z-index: 0;
+}
+
+.book-button {
+  font-size: 1.3rem;
+  padding: 1rem 1.7rem;
+  border-radius: 0.8rem;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 0;
+  margin-top: 3rem;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 755px) {
   nav {
-    padding: 1.2rem 1.5rem;
+    padding: 1.2rem 1rem;
   }
 
   .nav-content {
@@ -96,15 +146,15 @@ a.cs {
     right: 0;
     background-color: var(--secondary-color);
     flex-direction: column;
-    width: 12rem;
-    padding: 20px 0px;
+    align-items: start;
+    width: 100%;
+    padding: 20px 15px;
     line-height: 3.2rem;
     display: none;
   }
 
   .nav-bar li {
     display: block;
-    /* margin-inline: 1rem; */
   }
 
   .nav-content.active {
@@ -115,7 +165,50 @@ a.cs {
     display: flex;
   }
 
-  .call {
+  .call-button {
     margin: 1.5rem 0rem 0rem 0rem;
+  }
+
+  .hero-image {
+    background-size: cover;
+    height: 60vh;
+    margin-top: 60px;
+  }
+
+  .hero-content {
+    padding-top: 9rem;
+  }
+
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+
+  .hero-image::after {
+    height: 60vh;
+    margin-top: 60px;
+  }
+
+  .book-button {
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (max-height: 728px) and (max-width: 755px) {
+  .hero-content {
+    padding-top: 7rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-height: 578px) and (max-width: 755px) {
+  .hero-content {
+    padding-top: 5rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
   }
 }
