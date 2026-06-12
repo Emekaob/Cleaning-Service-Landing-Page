@@ -5,9 +5,9 @@
 }
 
 :root {
-  --primary-color: rgb(232, 74, 74);
+  --primary-color: rgb(13, 148, 136);
   --secondary-color: rgb(241, 241, 241);
-  --image-overlay-color: rgb(232, 74, 74, 0.5);
+  --image-overlay-color: rgba(13, 148, 136, 0.55);
 }
 
 html {
@@ -25,14 +25,14 @@ a {
 nav {
   padding: 1.2rem 3rem;
   width: 100%;
-
   background-color: var(--secondary-color);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   display: flex;
   justify-content: space-between;
   align-items: center;
-
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 5;
 }
 
@@ -95,20 +95,25 @@ a.cs {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 110vh;
+  height: 100vh;
   width: 100%;
   margin-top: 82px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-content {
   position: relative;
   z-index: 4;
   text-align: center;
-  padding-top: 12rem;
 }
 
 .hero-content h1 {
   font-size: 5rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
   color: var(--secondary-color);
 }
 
@@ -118,7 +123,7 @@ a.cs {
   top: 0;
   left: 0;
   width: 100%;
-  height: 110vh;
+  height: 100vh;
   margin-top: 82px;
   background-color: var(--image-overlay-color);
   z-index: 0;
@@ -133,6 +138,64 @@ a.cs {
   border: 0;
   margin-top: 3rem;
   cursor: pointer;
+}
+
+.service-container {
+  background-color: var(--secondary-color);
+  padding: 5rem 2.8rem;
+  width: 100%;
+}
+
+.service-container h2 {
+  text-align: center;
+  font-weight: 550;
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  letter-spacing: 0.08rem;
+  color: rgb(43, 43, 43);
+}
+
+.service-section {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.service-section-card {
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 4rem 1.7rem;
+  text-align: center;
+  transition: 0.5s;
+}
+
+.service-section-card:hover {
+  background-color: rgb(235, 235, 235);
+  box-shadow: 0 8px 25px rgba(13, 148, 136, 0.15);
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.service-section-card img {
+  max-width: 20%;
+}
+
+.service-section-text {
+  margin-top: 1.5rem;
+  line-height: 1.7rem;
+  letter-spacing: 0.1rem;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.service-section-card h3 {
+  font-weight: 300;
+  color: black;
+}
+
+.service-section-card a {
+  color: var(--primary-color);
 }
 
 @media screen and (max-width: 755px) {
@@ -175,10 +238,6 @@ a.cs {
     margin-top: 60px;
   }
 
-  .hero-content {
-    padding-top: 9rem;
-  }
-
   .hero-content h1 {
     font-size: 3rem;
   }
@@ -191,24 +250,47 @@ a.cs {
   .book-button {
     margin-top: 2rem;
   }
-}
 
-@media screen and (max-height: 728px) and (max-width: 755px) {
-  .hero-content {
-    padding-top: 7rem;
+  .service-section {
+    grid-template-columns: 25rem;
+    justify-content: center;
   }
 
+  .service-section-card {
+    padding: 4rem 2.5rem;
+  }
+}
+
+@media screen and (max-height: 888px) and (max-width: 755px) {
   .hero-content h1 {
     font-size: 2.5rem;
+  }
+
+  .service-container {
+    padding: 5rem 1rem;
+  }
+
+  .service-section {
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+
+  .service-section-card {
+    padding: 4rem 2rem;
   }
 }
 
 @media screen and (max-height: 578px) and (max-width: 755px) {
-  .hero-content {
-    padding-top: 5rem;
-  }
-
   .hero-content h1 {
     font-size: 2.2rem;
+  }
+
+  .service-container {
+    padding: 5rem 1rem;
+  }
+
+  .service-section {
+    grid-template-columns: 1fr;
+    justify-content: center;
   }
 }
