@@ -7,7 +7,7 @@
 :root {
   --primary-color: rgb(13, 148, 136);
   --secondary-color: rgb(241, 241, 241);
-  --image-overlay-color: rgba(13, 148, 136, 0.55);
+  --image-overlay-color: rgba(13, 148, 136, 0.4);
 }
 
 html {
@@ -21,6 +21,8 @@ body {
 a {
   text-decoration: none;
 }
+
+/* Navigation Bar */
 
 nav {
   padding: 1.2rem 3rem;
@@ -90,6 +92,8 @@ a.cs {
   cursor: pointer;
 }
 
+/* Hero Section */
+
 .hero-image {
   background-image: url("images/vitaly-gariev-2RpE13rIbAM-unsplash.jpg");
   background-size: cover;
@@ -140,13 +144,15 @@ a.cs {
   cursor: pointer;
 }
 
+/* What we offer section */
+
 .service-container {
   background-color: var(--secondary-color);
   padding: 5rem 2.8rem;
   width: 100%;
 }
 
-.service-container h2 {
+h2 {
   text-align: center;
   font-weight: 550;
   margin-bottom: 2rem;
@@ -198,6 +204,41 @@ a.cs {
   color: var(--primary-color);
 }
 
+/* Why people trust us section */
+
+.why-us {
+  background-color: var(--secondary-color);
+  height: 60%;
+  padding: 2.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.why-us-content-list {
+  display: flex;
+  align-content: center;
+  text-align: center;
+  padding-bottom: 2rem;
+}
+
+.why-us-content-list img {
+  width: 2.5%;
+}
+
+.why-us-content-list p {
+  font-weight: 600;
+}
+
+.why-us-image {
+  background-image: url("images/linus-belanger-vIU7S6RuWOU-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px;
+}
+
 @media screen and (max-width: 755px) {
   nav {
     padding: 1.2rem 1rem;
@@ -234,7 +275,7 @@ a.cs {
 
   .hero-image {
     background-size: cover;
-    height: 60vh;
+    height: 65vh;
     margin-top: 60px;
   }
 
@@ -243,7 +284,7 @@ a.cs {
   }
 
   .hero-image::after {
-    height: 60vh;
+    height: 65vh;
     margin-top: 60px;
   }
 
@@ -258,6 +299,13 @@ a.cs {
 
   .service-section-card {
     padding: 4rem 2.5rem;
+  }
+
+  .why-us {
+    padding: 1.5rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
   }
 }
 
@@ -281,8 +329,25 @@ a.cs {
 }
 
 @media screen and (max-height: 578px) and (max-width: 755px) {
+  p {
+    font-size: 0.8rem;
+  }
+
+  .hero-image {
+    height: 80vh;
+  }
+
+  .hero-image::after {
+    height: 80vh;
+  }
+
   .hero-content h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
+  }
+
+  h2 {
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
   }
 
   .service-container {
@@ -292,5 +357,9 @@ a.cs {
   .service-section {
     grid-template-columns: 1fr;
     justify-content: center;
+  }
+
+  .why-us-content-list p {
+    font-size: 0.75rem;
   }
 }
