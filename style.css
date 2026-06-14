@@ -5,8 +5,11 @@
 }
 
 :root {
-  --primary-color: rgb(13, 148, 136);
+  --primary-color: rgb(9, 112, 104);
+  --hover-color: rgb(13, 148, 136);
   --secondary-color: rgb(241, 241, 241);
+  --card-color: white;
+  --card-overlay-color: rgba(13, 148, 136, 0.2);
   --image-overlay-color: rgba(13, 148, 136, 0.4);
 }
 
@@ -20,6 +23,7 @@ body {
 
 a {
   text-decoration: none;
+  color: var(--secondary-color);
 }
 
 /* Navigation Bar */
@@ -78,18 +82,21 @@ a.cs {
 }
 
 .nav-bar a:hover {
-  color: var(--primary-color);
+  color: var(--hover-color);
 }
 
 .call-button {
   background-color: var(--primary-color);
-  color: var(--secondary-color);
   border: 0;
   border-radius: 0.6rem;
   padding: 0.8rem 1.2rem;
   margin-left: 6rem;
   font-size: 0.9rem;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--hover-color);
 }
 
 /* Hero Section */
@@ -138,7 +145,6 @@ a.cs {
   padding: 1rem 1.7rem;
   border-radius: 0.8rem;
   background-color: var(--primary-color);
-  color: var(--secondary-color);
   border: 0;
   margin-top: 3rem;
   cursor: pointer;
@@ -170,6 +176,7 @@ h2 {
 .service-section-card {
   border: none;
   border-radius: 12px;
+  background-color: var(--card-color);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
   padding: 4rem 1.7rem;
   text-align: center;
@@ -177,8 +184,8 @@ h2 {
 }
 
 .service-section-card:hover {
-  background-color: rgb(235, 235, 235);
-  box-shadow: 0 8px 25px rgba(13, 148, 136, 0.15);
+  background-color: rgb(241, 241, 241);
+  box-shadow: 0 8px 25px var(--card-overlay-color);
   transform: translateY(-4px);
   transition: all 0.3s ease;
   cursor: pointer;
@@ -207,11 +214,16 @@ h2 {
 /* Why people trust us section */
 
 .why-us {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
   height: 60%;
   padding: 2.5rem;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+}
+
+.why-us h2 {
+  color: var(--secondary-color);
 }
 
 .why-us-content-list {
@@ -237,6 +249,198 @@ h2 {
   height: 100%;
   width: 100%;
   border-radius: 15px;
+}
+
+/* Customer reviews */
+
+.testimonies {
+  background-color: var(--secondary-color);
+  text-align: center;
+  padding: 2.5rem 1rem;
+  font-size: 0.85rem;
+}
+
+.testimonies h4 {
+  color: var(--hover-color);
+  letter-spacing: 0.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.testimonies h2 {
+  margin-bottom: 0.5rem;
+}
+
+.testimonies-grid {
+  padding: 2rem 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3rem 5rem;
+}
+
+.testimonies-card {
+  background-color: var(--card-color);
+  box-shadow: 0 8px 25px var(--card-overlay-color);
+  text-align: left;
+  padding: 2rem;
+  border-radius: 15px;
+  position: relative;
+}
+
+.testimonies-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20px;
+  bottom: 20px;
+  width: 5px;
+  background-color: var(--primary-color);
+  border-radius: 0 4px 4px 0;
+}
+
+.card-review {
+  line-height: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.card-review p:first-child {
+  padding-bottom: 1rem;
+}
+
+.customer-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.customer-profile {
+  background-color: aquamarine;
+  color: var(--card-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 3rem;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: navy;
+}
+
+.orange {
+  background-color: orange;
+}
+
+.google-review {
+  font-size: 0.75rem;
+  padding-top: 0.2rem;
+  color: rgb(118, 118, 118);
+}
+
+.dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: blue;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.review-footer {
+  padding: 1rem;
+  color: rgb(118, 118, 118);
+}
+
+.review-button {
+  margin-left: 0;
+}
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  font-size: 1.05rem;
+  margin-bottom: -2rem;
+}
+
+.footer {
+  padding: 4rem 0rem 0rem 2.8rem;
+  line-height: 2rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 1fr;
+  gap: 2rem;
+}
+
+.about-card {
+  grid-column: 1/3;
+}
+
+.quick-menu-card {
+  grid-column: 3/4;
+}
+
+.program-card {
+  grid-column: 4/5;
+}
+
+.social-icon-card {
+  grid-column: 6/5;
+}
+
+.footer li {
+  list-style-type: none;
+  line-height: 2.2rem;
+}
+
+.footer h6 {
+  color: white;
+  margin-bottom: 0.6rem;
+  font-weight: 100;
+  letter-spacing: 0.08rem;
+}
+
+footer a {
+  color: var(--secondary-color);
+}
+
+footer a:hover {
+  color: var(--hover-color);
+}
+
+.read-more-button {
+  margin-left: 0;
+  background-color: var(--secondary-color);
+}
+
+.read-more-button:hover {
+  background-color: var(--secondary-color);
+}
+
+.read-more-button a {
+  color: var(--primary-color);
+}
+
+.read-more-button a:hover {
+  color: var(--primary-color);
+}
+
+.about-card p {
+  margin-bottom: 1rem;
+}
+
+.copyright-card {
+  text-align: center;
+  padding: 7rem 0rem 5.5rem 0rem;
+  color: var(--secondary-color);
+}
+
+.heart {
+  color: red;
 }
 
 @media screen and (max-width: 755px) {
@@ -303,9 +507,42 @@ h2 {
 
   .why-us {
     padding: 1.5rem 1rem;
-    display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
+  }
+
+  .testimonies {
+    padding: 2.5rem 0.5rem;
+  }
+
+  .testimonies-grid {
+    padding: 2rem 1rem;
+    grid-template-columns: 1fr;
+    gap: 1rem 0rem;
+  }
+
+  .review-footer {
+    padding: 0rem;
+  }
+
+  .footer {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 2rem 1rem;
+  }
+  .about-card {
+    grid-column: 1/2;
+  }
+  .quick-menu-card {
+    grid-column: 1/2;
+  }
+  .program-card {
+    grid-column: 1/2;
+  }
+  .social-icon-card {
+    grid-column: 1/2;
+  }
+  .copyright-card {
+    padding: 0rem 0rem 3rem 0rem;
   }
 }
 
