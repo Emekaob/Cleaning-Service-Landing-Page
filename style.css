@@ -6,13 +6,14 @@
 
 :root {
   --primary-color: rgb(9, 112, 104);
-  --hover-color: rgb(13, 148, 136);
+  --hover-color: rgb(17, 179, 165);
   --secondary-color: rgb(241, 241, 241);
   --card-color: white;
   --card-overlay-color: rgba(13, 148, 136, 0.2);
   --image-overlay-color: rgba(13, 148, 136, 0.4);
   --section-padding: 5rem 2.5rem;
   --tablet-padding: 3rem 1.8rem;
+  --mobile-padding: 2.5rem 1rem;
 }
 
 html {
@@ -26,6 +27,22 @@ body {
 a {
   text-decoration: none;
   color: var(--secondary-color);
+}
+
+h2 {
+  text-align: center;
+  font-weight: 550;
+  padding-bottom: 3rem;
+  font-size: 2.5rem;
+  letter-spacing: 0.08rem;
+  color: rgb(43, 43, 43);
+}
+
+h4 {
+  color: var(--hover-color);
+  letter-spacing: 0.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
 }
 
 /* Navigation Bar */
@@ -157,16 +174,8 @@ button:hover {
 .service-container {
   background-color: var(--secondary-color);
   padding: var(--section-padding);
-  width: 100%;
-}
-
-h2 {
   text-align: center;
-  font-weight: 550;
-  margin-bottom: 3rem;
-  font-size: 2.5rem;
-  letter-spacing: 0.08rem;
-  color: rgb(43, 43, 43);
+  /* width: 100%; */
 }
 
 .service-section {
@@ -253,6 +262,54 @@ h2 {
   border-radius: 15px;
 }
 
+/* Statistics */
+.stats {
+  background-color: var(--primary-color);
+  padding: var(--section-padding);
+  color: var(--secondary-color);
+  text-align: center;
+}
+
+.stats h4 {
+  color: var(--secondary-color);
+  padding-bottom: 2rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+}
+
+.stats-content {
+  position: relative;
+}
+
+.stats-content:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 80%;
+  width: 2px;
+  background-color: var(--secondary-color);
+  border-radius: 4px;
+}
+
+.stats-grid p {
+  font-size: 3rem;
+}
+
+.stats-grid sup {
+  font-size: 1rem;
+  color: var(--hover-color);
+}
+
+.stats-grid h5 {
+  font-size: 0.7rem;
+  color: var(--secondary-color);
+}
+
 /* Customer reviews */
 
 .testimonies {
@@ -260,12 +317,6 @@ h2 {
   text-align: center;
   padding: var(--section-padding);
   font-size: 0.85rem;
-}
-
-.testimonies h4 {
-  color: var(--hover-color);
-  letter-spacing: 0.2rem;
-  margin-bottom: 0.5rem;
 }
 
 .testimonies h2 {
@@ -517,7 +568,6 @@ footer a:hover {
 
   .testimonies-grid {
     padding: var(--tablet-padding);
-    /* grid-template-columns: 1fr; */
     gap: 2rem 1.5rem;
   }
 
@@ -601,17 +651,18 @@ footer a:hover {
     margin-top: 2rem;
   }
 
-  .service-section {
-    grid-template-columns: 25rem;
-    justify-content: center;
+  .service-container h2 {
+    margin-top: -2rem;
   }
 
-  .service-section-card {
-    padding: var(--section-padding);
+  .service-section {
+    grid-template-columns: 1fr;
+    justify-content: center;
+    /* padding: var(--mobile-padding); */
   }
 
   .why-us {
-    padding: 1.5rem 1rem;
+    padding: var(--mobile-padding);
     grid-template-columns: 1fr;
     grid-template-rows: repeat(2, 1fr);
   }
@@ -620,12 +671,28 @@ footer a:hover {
     font-size: 0.9rem;
   }
 
+  .stats {
+    padding: var(--mobile-padding);
+  }
+
+  .stats-grid p {
+    font-size: 2rem;
+  }
+
+  .stats-grid sup {
+    font-size: 1rem;
+  }
+
+  .stats-grid h5 {
+    font-size: 0.7rem;
+  }
+
   .testimonies {
     padding: 2.5rem 0.5rem;
   }
 
   .testimonies-grid {
-    padding: 2rem 1rem;
+    padding: var(--mobile-padding);
     grid-template-columns: 1fr;
     gap: 1rem 0rem;
   }
@@ -637,7 +704,7 @@ footer a:hover {
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 1rem;
-    padding: 2rem 1rem;
+    padding: var(--mobile-padding);
   }
 
   .about-card {
