@@ -10,7 +10,7 @@
   --secondary-color: rgb(241, 241, 241);
   --card-color: white;
   --card-overlay-color: rgba(13, 148, 136, 0.2);
-  --image-overlay-color: rgba(13, 148, 136, 0.4);
+  --image-overlay-color: rgba(13, 148, 136, 0.5);
   --section-padding: 5rem 2.5rem;
   --tablet-padding: 3rem 1.8rem;
   --mobile-padding: 2.5rem 1rem;
@@ -50,6 +50,19 @@ h4 {
   letter-spacing: 0.2rem;
   margin-bottom: 0.5rem;
   font-size: 0.85rem;
+}
+
+img {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.6s ease 0.2s,
+    transform 0.6s ease 0.2s;
+}
+
+img.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 nav a.active {
@@ -156,14 +169,8 @@ button:hover {
   align-content: center;
 }
 
-.service-hero-content h1 {
-  font-size: 5rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-  color: var(--secondary-color);
-}
-
 .service-hero-content h3 {
-  font-size: 1.6rem;
+  font-size: 2.5rem;
   padding: 0.5rem 0rem;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
   color: var(--secondary-color);
@@ -735,11 +742,33 @@ footer a:hover {
     margin-top: 60px;
   }
 
+  .service-hero-content {
+    background-color: var(--primary-color);
+    height: 50vh;
+    margin-top: 60px;
+    padding-left: 1rem;
+    align-content: center;
+  }
+
+  .service-hero-content h3 {
+    font-size: 2.2rem;
+    padding: 0.5rem 0rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    color: var(--secondary-color);
+  }
+
+  .service-hero-content p {
+    font-size: 0.9rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    color: var(--secondary-color);
+    line-height: 1.7rem;
+  }
+
   .book-button {
     margin-top: 2rem;
   }
 
-  .service-container h2 {
+  .service-container h4 {
     margin-top: -2rem;
   }
 
@@ -786,6 +815,39 @@ footer a:hover {
 
   .review-footer {
     padding: 0rem;
+  }
+
+  .service-page-card {
+    flex-direction: column;
+  }
+
+  .service-page {
+    padding: var(--mobile-padding);
+  }
+
+  .service-page-card img {
+    max-width: 100%;
+    border-radius: 2rem 2rem 0rem 0rem;
+  }
+
+  .service-page-card-alternate {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .service-page-card-alternate img {
+    border-radius: 2rem 2rem 0rem 0rem;
+  }
+
+  .service-page-grid-content {
+    padding: 2rem;
+    line-height: 1.7rem;
+  }
+
+  .service-page-grid-content img {
+    max-width: 12%;
+    padding: 0.5rem;
+    border-radius: 1rem;
   }
 
   .footer-grid {
