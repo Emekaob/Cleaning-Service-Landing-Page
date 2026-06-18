@@ -464,17 +464,29 @@ button:hover {
 .service-page {
   padding: var(--section-padding);
   background-color: var(--secondary-color);
+  text-align: center;
+}
+
+.service-page button {
+  margin-top: 2rem;
+}
+
+.service-page button a {
+  display: flex;
+  align-items: center;
 }
 
 .service-page-card {
   display: flex;
   align-items: center;
+  text-align: start;
   background-color: var(--card-color);
   border-radius: 2rem;
 }
 
 .service-page-card img {
   max-width: 40%;
+  height: 100%;
   border-radius: 2rem 0rem 0rem 2rem;
 }
 
@@ -504,6 +516,19 @@ button:hover {
   font-size: 2rem;
   color: var(--h2-font-color);
   padding: 1.5rem 0rem;
+}
+
+.extra h3 {
+  padding: 1rem 0rem;
+}
+
+.service-page-grid-content h4 {
+  background-color: var(--card-overlay-color);
+  text-align: center;
+  width: 35%;
+  border-radius: 0.5rem;
+  font-size: 0.7rem;
+  margin-top: 0.5rem;
 }
 
 /* Footer */
@@ -775,6 +800,15 @@ footer a:hover {
   .service-section {
     grid-template-columns: 1fr;
     justify-content: center;
+  }
+
+  .service-page-grid-content h4 {
+    background-color: var(--card-overlay-color);
+    text-align: center;
+    width: 50%;
+    border-radius: 0.5rem;
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
   }
 
   .why-us {
