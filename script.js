@@ -39,23 +39,29 @@ const images = document.querySelectorAll("img");
 const statsSection = document.querySelector(".stats-grid");
 const statNumbers = document.querySelectorAll(".stat-number .count");
 
-const observer = new IntersectionObserver(
+const revealObserver = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
       }
+    });
+  },
+  { threshold: 0.2 },
+);
+
+images.forEach((image) => revealObserver.observe(image));
+
+const statsObserver = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         statNumbers.forEach(animateCount);
-        observer.disconnect();
+        statsObserver.disconnect();
       }
     });
   },
-  {
-    threshold: 0.2,
-  },
+  { threshold: 0.3 },
 );
 
-if (statsSection) observer.observe(statsSection);
-
-images.forEach((image) => observer.observe(image));
+if (statsSection) statsObserver.observe(statsSection);

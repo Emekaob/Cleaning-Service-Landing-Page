@@ -590,6 +590,68 @@ button.book-service-button a {
   line-height: 1.7rem;
 }
 
+.our-team-section {
+  padding: var(--section-padding);
+  color: var(--h2-font-color);
+}
+
+.our-team-section-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+}
+
+.team-members-card {
+  background-color: white;
+  text-align: center;
+  justify-items: center;
+  padding: 3rem 0rem;
+  border-radius: 2rem;
+  width: 100%;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: 0.5s;
+}
+
+.team-members-card:hover {
+  background-color: rgb(241, 241, 241);
+  box-shadow: 0 8px 25px var(--card-overlay-color);
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.team-members-card p {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.team-members-card div {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  background-color: burlywood;
+  align-content: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.team-members-card h4 {
+  padding-top: 0.2rem;
+}
+
+div.profile-one {
+  background-color: coral;
+}
+
+div.profile-two {
+  background-color: cadetblue;
+}
+
+div.profile-three {
+  background-color: seagreen;
+}
+
 /* Footer */
 
 footer {
@@ -804,6 +866,31 @@ footer a:hover {
     width: 45%;
   }
 
+  button.book-service-button {
+    width: 15rem;
+  }
+
+  .about-page {
+    padding: var(--tablet-padding);
+  }
+
+  .about-page-card {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page-card img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .our-team-section {
+    padding: var(--tablet-padding);
+  }
+
+  .our-team-section-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .footer-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem 6rem;
@@ -946,7 +1033,8 @@ footer a:hover {
   }
 
   .stats-grid h5 {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
+    line-height: 1rem;
   }
 
   .testimonies {
@@ -994,6 +1082,27 @@ footer a:hover {
     max-width: 12%;
     padding: 0.5rem;
     border-radius: 1rem;
+  }
+
+  .about-page {
+    padding: var(--mobile-padding);
+  }
+
+  .about-page-card {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page-card img {
+    height: 100%;
+    width: 100%;
+  }
+
+  .our-team-section {
+    padding: var(--mobile-padding);
+  }
+
+  .our-team-section-grid {
+    grid-template-columns: 1fr;
   }
 
   .footer-grid {
