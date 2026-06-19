@@ -11,6 +11,7 @@
   --card-color: white;
   --card-overlay-color: rgba(13, 148, 136, 0.2);
   --image-overlay-color: rgba(13, 148, 136, 0.5);
+  --header-overlay-color: rgba(0, 0, 0, 0.5);
   --section-padding: 5rem 2.5rem;
   --tablet-padding: 3rem 1.8rem;
   --mobile-padding: 2.5rem 1rem;
@@ -161,28 +162,6 @@ button:hover {
   align-items: center;
 }
 
-.service-hero-content {
-  background-color: var(--primary-color);
-  height: 70vh;
-  margin-top: 82px;
-  padding-left: 2.5rem;
-  align-content: center;
-}
-
-.service-hero-content h3 {
-  font-size: 2.5rem;
-  padding: 0.5rem 0rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-  color: var(--secondary-color);
-}
-
-.service-hero-content p {
-  font-size: 1.1rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-  color: var(--secondary-color);
-  line-height: 1.7rem;
-}
-
 .hero-content {
   position: relative;
   z-index: 4;
@@ -203,7 +182,7 @@ button:hover {
   width: 100%;
   height: 100vh;
   margin-top: 82px;
-  background-color: var(--image-overlay-color);
+  background-color: var(--header-overlay-color);
   z-index: 0;
 }
 
@@ -461,6 +440,45 @@ button:hover {
 
 /* Service Page */
 
+.service-hero-image {
+  background-image: url("images/section-header.jpg");
+  height: 65vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  margin-top: 82px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.service-hero-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65vh;
+  margin-top: 82px;
+  background-color: var(--header-overlay-color);
+  z-index: 0;
+}
+
+.service-hero-content {
+  padding-left: 2rem;
+  position: relative;
+  z-index: 4;
+}
+
+.service-hero-content h3 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  color: var(--secondary-color);
+}
+
 .service-page {
   padding: var(--section-padding);
   background-color: var(--secondary-color);
@@ -482,6 +500,7 @@ button:hover {
   text-align: start;
   background-color: var(--card-color);
   border-radius: 2rem;
+  height: 20rem;
 }
 
 .service-page-card img {
@@ -501,8 +520,12 @@ button:hover {
 }
 
 .service-page-grid-content {
-  padding: 4rem 10rem 4rem 6rem;
+  padding-left: 6rem;
   line-height: 1.7rem;
+}
+
+.service-page-grid-content p {
+  padding-right: 10rem;
 }
 
 .service-page-grid-content img {
@@ -608,7 +631,7 @@ footer a:hover {
 
   .nav-content {
     position: absolute;
-    top: 90px;
+    top: 85px;
     right: 0;
     background-color: var(--secondary-color);
     flex-direction: column;
@@ -695,6 +718,55 @@ footer a:hover {
     padding: 0rem;
   }
 
+  .service-hero-image {
+    height: 65vh;
+    margin-top: 60px;
+  }
+
+  .service-hero-image::after {
+    height: 65vh;
+    margin-top: 60px;
+  }
+
+  .service-hero-content {
+    padding-left: 1.5rem;
+  }
+
+  .service-hero-content h3 {
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .service-page {
+    padding: var(--tablet-padding);
+  }
+
+  .service-page-card {
+    height: 20rem;
+  }
+
+  .service-page-grid-content {
+    padding-left: 2rem;
+  }
+
+  .service-page-grid-content p {
+    padding-right: 6rem;
+  }
+
+  .service-page-grid-content h3 {
+    font-size: 2rem;
+    color: var(--h2-font-color);
+    padding: 1.5rem 0rem;
+  }
+
+  .extra h3 {
+    padding: 1rem 0rem;
+  }
+
+  .service-page-grid-content h4 {
+    width: 45%;
+  }
+
   .footer-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 2rem 6rem;
@@ -767,34 +839,41 @@ footer a:hover {
     margin-top: 60px;
   }
 
-  .service-hero-content {
-    background-color: var(--primary-color);
-    height: 50vh;
-    margin-top: 60px;
-    padding-left: 1rem;
-    align-content: center;
-  }
-
-  .service-hero-content h3 {
-    font-size: 2.2rem;
-    padding: 0.5rem 0rem;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-    color: var(--secondary-color);
-  }
-
-  .service-hero-content p {
-    font-size: 0.9rem;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-    color: var(--secondary-color);
-    line-height: 1.7rem;
-  }
-
   .book-button {
     margin-top: 2rem;
   }
 
+  .service-hero-image {
+    height: 60vh;
+    margin-top: 60px;
+  }
+
+  .service-hero-image::after {
+    height: 60vh;
+    margin-top: 60px;
+  }
+
+  .service-hero-content {
+    padding: 0rem 1rem;
+    position: relative;
+    z-index: 4;
+  }
+
+  .service-hero-content h3 {
+    font-size: 2.1rem;
+    line-height: 3rem;
+  }
+
   .service-container h4 {
     margin-top: -2rem;
+  }
+
+  .service-page-grid-content {
+    padding-left: 6rem;
+  }
+
+  .service-page-grid-content p {
+    padding-right: 0rem;
   }
 
   .service-section {
@@ -802,13 +881,8 @@ footer a:hover {
     justify-content: center;
   }
 
-  .service-page-grid-content h4 {
-    background-color: var(--card-overlay-color);
-    text-align: center;
-    width: 50%;
-    border-radius: 0.5rem;
-    font-size: 0.7rem;
-    margin-top: 0.5rem;
+  .service-page-card {
+    height: 100%;
   }
 
   .why-us {
@@ -922,6 +996,11 @@ footer a:hover {
   .service-section-card {
     padding: 4rem 2rem;
   }
+
+  .service-page-grid-content h4 {
+    width: 50%;
+    letter-spacing: 0.1rem;
+  }
 }
 
 @media screen and (max-height: 578px) and (max-width: 755px) {
@@ -957,5 +1036,15 @@ footer a:hover {
 
   .why-us-content-list p {
     font-size: 0.75rem;
+  }
+
+  .service-page-grid-content h4 {
+    background-color: var(--card-overlay-color);
+    text-align: center;
+    width: 60%;
+    border-radius: 0.5rem;
+    font-size: 0.7rem;
+    margin-top: 0.5rem;
+    letter-spacing: 0.1rem;
   }
 }
