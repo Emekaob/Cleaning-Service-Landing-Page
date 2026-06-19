@@ -16,7 +16,7 @@ links.forEach((link) => {
 
 function animateCount(el) {
   const target = +el.getAttribute("data-target");
-  const duration = 1500; // ms
+  const duration = 1500;
   const startTime = performance.now();
 
   function update(currentTime) {
@@ -28,7 +28,7 @@ function animateCount(el) {
     if (progress < 1) {
       requestAnimationFrame(update);
     } else {
-      el.textContent = target.toLocaleString(); // snap to exact final value
+      el.textContent = target.toLocaleString();
     }
   }
 
@@ -47,7 +47,7 @@ const observer = new IntersectionObserver(
       }
       if (entry.isIntersecting) {
         statNumbers.forEach(animateCount);
-        observer.disconnect(); // only run once
+        observer.disconnect();
       }
     });
   },
