@@ -65,3 +65,76 @@ const statsObserver = new IntersectionObserver(
 );
 
 if (statsSection) statsObserver.observe(statsSection);
+
+// const hours = {
+//   monday: { open: "08:00", close: "18:00" },
+//   tuesday: { open: "08:00", close: "18:00" },
+//   wednesday: { open: "08:00", close: "18:00" },
+//   thursday: { open: "08:00", close: "18:00" },
+//   friday: { open: "08:00", close: "18:00" },
+//   saturday: { open: "09:00", close: "16:00" },
+//   sunday: null, // closed
+// };
+
+// const dayNames = [
+//   "sunday",
+//   "monday",
+//   "tuesday",
+//   "wednesday",
+//   "thursday",
+//   "friday",
+//   "saturday",
+// ];
+
+// function timeToMinutes(timeStr) {
+//   const [h, m] = timeStr.split(":").map(Number);
+//   return h * 60 + m;
+// }
+
+// function updateHoursDisplay() {
+//   const now = new Date();
+//   const today = dayNames[now.getDay()];
+//   const nowMinutes = now.getHours() * 60 + now.getMinutes();
+
+//   // Highlight today's row
+//   document.querySelectorAll(".hours-row").forEach((row) => {
+//     row.classList.toggle("is-today", row.dataset.day === today);
+//   });
+
+//   // Determine open/closed status
+//   const todayHours = hours[today];
+//   const statusDot = document.querySelector(".status-dot");
+//   const statusText = document.querySelector(".status-text");
+
+//   if (!todayHours) {
+//     statusDot.className = "status-dot closed";
+//     statusText.textContent = "Closed today";
+//     return;
+//   }
+
+//   const openMinutes = timeToMinutes(todayHours.open);
+//   const closeMinutes = timeToMinutes(todayHours.close);
+//   const isOpen = nowMinutes >= openMinutes && nowMinutes < closeMinutes;
+
+//   if (isOpen) {
+//     statusDot.className = "status-dot open";
+//     statusText.textContent = `Open now · closes at ${formatTime(todayHours.close)}`;
+//   } else {
+//     statusDot.className = "status-dot closed";
+//     statusText.textContent =
+//       nowMinutes < openMinutes
+//         ? `Closed · opens at ${formatTime(todayHours.open)}`
+//         : "Closed now";
+//   }
+// }
+
+// function formatTime(timeStr) {
+//   const [h, m] = timeStr.split(":").map(Number);
+//   const period = h >= 12 ? "pm" : "am";
+//   const hour12 = h % 12 === 0 ? 12 : h % 12;
+//   return m === 0
+//     ? `${hour12}${period}`
+//     : `${hour12}:${String(m).padStart(2, "0")}${period}`;
+// }
+
+// updateHoursDisplay();

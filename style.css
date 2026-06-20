@@ -652,6 +652,110 @@ div.profile-three {
   background-color: seagreen;
 }
 
+/* Contact Page */
+
+.contact-hero-image {
+  background-image: url("images/contact-header.jpg");
+}
+
+.contact-page {
+  padding: var(--section-padding);
+  background-color: var(--secondary-color);
+}
+
+.contact-address p a {
+  color: var(--h2-font-color);
+  display: flex;
+  align-items: center;
+}
+
+.material-symbols-outlined {
+  color: var(--primary-color);
+  font-size: 2rem;
+}
+
+/* .hours-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.hours-title {
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #5f5e5a;
+  padding: 6px 0;
+}
+
+.hours-row.is-today {
+  font-weight: 600;
+  color: #0f2b2b;
+}
+
+.hours-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #888;
+}
+
+.status-dot.open {
+  background: #1d9e75;
+}
+
+.status-dot.closed {
+  background: #e24b4a;
+}
+
+.input-group {
+  position: relative;
+  width: 300px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 14px 10px;
+  font-size: 1rem;
+  border: 1px solid var(--primary-color);
+  outline: none;
+  border-radius: 4px;
+  background-color: var(--secondary-color);
+}
+
+.input-group label {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #888;
+  background-color: var(--secondary-color);
+  font-size: 1rem;
+  pointer-events: none;
+  transition: 0.3s ease;
+  padding: 0 5px;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+  top: -1px;
+  font-size: 14px;
+} */
+
 /* Footer */
 
 footer {
