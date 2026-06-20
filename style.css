@@ -663,6 +663,12 @@ div.profile-three {
   background-color: var(--secondary-color);
 }
 
+.contact-page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
 .contact-address p a {
   color: var(--h2-font-color);
   display: flex;
@@ -722,9 +728,15 @@ div.profile-three {
   background: #e24b4a;
 }
 
-/* .input-group {
+form {
+  justify-items: center;
+  text-align: center;
+}
+
+.input-group {
   position: relative;
-  width: 300px;
+  width: 80%;
+  padding-bottom: 2rem;
 }
 
 .input-group input {
@@ -739,12 +751,11 @@ div.profile-three {
 
 .input-group label {
   position: absolute;
-  top: 50%;
+  top: 30%;
   left: 10px;
   transform: translateY(-50%);
   color: #888;
   background-color: var(--secondary-color);
-  font-size: 1rem;
   pointer-events: none;
   transition: 0.3s ease;
   padding: 0 5px;
@@ -754,7 +765,56 @@ div.profile-three {
 .input-group input:valid + label {
   top: -1px;
   font-size: 14px;
-} */
+}
+
+.input-group select {
+  width: 100%;
+  padding: 14px 10px;
+  font-size: 1rem;
+  border: 1px solid var(--primary-color);
+  outline: none;
+  border-radius: 4px;
+  background: var(--secondary-color);
+  appearance: none;
+  cursor: pointer;
+}
+
+.input-group select:focus + label,
+.input-group select:valid + label {
+  top: -1px;
+  font-size: 14px;
+  background: var(--secondary-color);
+}
+
+.input-group textarea {
+  width: 100%;
+  height: 5rem;
+  border-radius: 4px;
+  border: 1px solid var(--primary-color);
+  background-color: var(--secondary-color);
+  padding: 14px 10px;
+  outline: none;
+  resize: none;
+  /* white-space: nowrap; */
+}
+
+.input-group textarea:focus + label,
+.input-group textarea:valid + label {
+  top: -1px;
+  font-size: 14px;
+  background: var(--secondary-color);
+}
+
+form button {
+  width: 80%;
+  background-color: var(--primary-color);
+  color: var(--card-color);
+  border: none;
+  padding: 0.8rem 0;
+  border-radius: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
 
 /* Footer */
 

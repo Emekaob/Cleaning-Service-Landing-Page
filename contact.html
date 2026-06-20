@@ -6,7 +6,7 @@
     <title>Cleaning Service</title>
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0&icon_names=add_call,location_on,mail"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@40,400,0,0&icon_names=add_call,expand_more,location_on,mail"
     />
     <link rel="stylesheet" href="style.css" />
     <script
@@ -106,15 +106,48 @@
             </div>
           </section>
 
-          <!-- <section class="contact-page-grid-form">
+          <section class="contact-page-grid-form">
             <h2>Send Us A Message</h2>
             <form action="">
               <div class="input-group">
                 <input type="text" id="name" required />
-                <label for="name">Enter Name</label>
+                <label for="name">Your Name</label>
               </div>
+
+              <div class="input-group">
+                <input type="email" id="email" required />
+                <label for="email">Your Email</label>
+              </div>
+
+              <div class="input-group">
+                <input type="tel" id="tel" required />
+                <label for="tel">Phone Number</label>
+              </div>
+
+              <div class="input-group">
+                <select id="service-type" required>
+                  <option value="" disabled selected hidden></option>
+                  <option value="residential-cleaning">
+                    Residential Cleaning
+                  </option>
+                  <option value="commercial-cleaning">
+                    Commercial Cleaning
+                  </option>
+                  <option value="customized-cleaning">
+                    Customized Cleaning
+                  </option>
+                </select>
+                <label for="service-type">Type of Cleaning Needed </label>
+              </div>
+
+              <div class="input-group">
+                <textarea name="textarea" id="textarea" required></textarea>
+                <label for="textarea">Tell Us About Your Cleaning Needs</label>
+              </div>
+
+              <button type="submit">Send Message</button>
             </form>
-          </section> -->
+          </section>
         </section>
       </section>
     </main>
