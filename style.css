@@ -674,7 +674,7 @@ div.profile-three {
   font-size: 2rem;
 }
 
-/* .hours-card {
+.hours-card {
   background: #fff;
   border-radius: 12px;
   padding: 1.25rem;
@@ -722,7 +722,7 @@ div.profile-three {
   background: #e24b4a;
 }
 
-.input-group {
+/* .input-group {
   position: relative;
   width: 300px;
 }
