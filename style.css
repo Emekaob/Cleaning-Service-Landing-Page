@@ -669,19 +669,31 @@ div.profile-three {
   gap: 2rem;
 }
 
+.contact-address {
+  background-color: var(--card-color);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+}
+
 .contact-address p a {
   color: var(--h2-font-color);
   display: flex;
   align-items: center;
+  line-height: 2rem;
+}
+
+.contact-address p span {
+  padding-right: 0.5rem;
 }
 
 .material-symbols-outlined {
   color: var(--primary-color);
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 .hours-card {
-  background: #fff;
+  background: var(--card-color);
   border-radius: 12px;
   padding: 1.25rem;
 }
@@ -689,19 +701,20 @@ div.profile-three {
 .hours-title {
   font-size: 14px;
   margin: 0 0 10px;
+  color: var(--primary-color);
 }
 
 .hours-row {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
-  color: #5f5e5a;
+  color: var(--h2-font-color);
   padding: 6px 0;
 }
 
 .hours-row.is-today {
   font-weight: 600;
-  color: #0f2b2b;
+  color: var(--primary-color);
 }
 
 .hours-status {
@@ -784,6 +797,50 @@ form {
   top: -1px;
   font-size: 14px;
   background: var(--secondary-color);
+}
+
+s.input-group select {
+  appearance: none;
+}
+
+@supports (appearance: base-select) {
+  .input-group select,
+  .input-group select::picker(select) {
+    appearance: base-select;
+  }
+}
+
+/* style the open dropdown panel */
+.input-group select::picker(select) {
+  border: 1px solid var(--primary-color);
+  border-radius: 4px;
+  background: var(--secondary-color);
+  margin-top: 2px;
+  padding: 4px 0;
+}
+
+/* style each option row */
+.input-group select option {
+  padding: 10px 12px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+/* the hover color */
+.input-group select option:hover {
+  background-color: var(--primary-color);
+  color: var(--card-color);
+}
+
+/* style the currently selected option */
+.input-group select option:checked {
+  background-color: var(--primary-color);
+  color: var(--card-color);
+}
+
+/* style the little checkmark next to the selected option */
+.input-group select option::checkmark {
+  color: var(--card-color);
 }
 
 .input-group textarea {
@@ -1267,6 +1324,20 @@ footer a:hover {
 
   .our-team-section-grid {
     grid-template-columns: 1fr;
+  }
+
+  .contact-page {
+    padding: var(--mobile-padding);
+  }
+
+  .contact-page-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .input-group {
+    width: 95%;
   }
 
   .footer-grid {
