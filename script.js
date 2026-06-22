@@ -92,6 +92,8 @@ function timeToMinutes(timeStr) {
 }
 
 function updateHoursDisplay() {
+  if (!document.querySelector(".status-dot")) return;
+
   const now = new Date();
   const today = dayNames[now.getDay()];
   const nowMinutes = now.getHours() * 60 + now.getMinutes();
@@ -138,3 +140,14 @@ function formatTime(timeStr) {
 }
 
 updateHoursDisplay();
+
+const storyText = document.getElementById("story-text");
+const readMoreBtn = document.getElementById("read-more-btn");
+
+// Start truncated on mobile
+storyText.classList.add("truncated");
+
+readMoreBtn.addEventListener("click", () => {
+  const isTruncated = storyText.classList.toggle("truncated");
+  readMoreBtn.textContent = isTruncated ? "Read more" : "Show less";
+});
