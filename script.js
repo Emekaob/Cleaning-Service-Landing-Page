@@ -5,11 +5,14 @@ hamburger.addEventListener("click", () => {
   navBar.classList.toggle("active");
 });
 
-const links = document.querySelectorAll(".nav-bar a");
-const currentPage = window.location.pathname.split("/").pop();
+const normalizePath = (path) =>
+  path.length > 1 ? path.replace(/\/+$/, "") : path;
 
-links.forEach((link) => {
-  if (link.getAttribute("href") === currentPage) {
+const currentPath = normalizePath(window.location.pathname);
+
+document.querySelectorAll(".nav-bar a").forEach((link) => {
+  const sameSite = link.origin === window.location.origin;
+  if (sameSite && normalizePath(link.pathname) === currentPath) {
     link.classList.add("active");
   }
 });
